@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 const NavBar = () => {
 
   const [isOpen, setIsOpen] = useState(false)
-  console.log('isOpen -> ', isOpen)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)

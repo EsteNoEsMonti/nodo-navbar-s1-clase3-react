@@ -1,19 +1,33 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { slideInFromSide } from '../utility/animation'
+import SolDeMayo from '../assets/SolDeMayo.png'
+import CharlyArg from '../assets/CharlyArg.jpg'
+import { animateForSolDeMayo } from '../utility/animation'
 
 const Body = () => {
 
   return (
-    <div className="flex justify-center mt-36 md:mt-20">
+    <div className='flex justify-center'>
       <motion.div
-        variants={slideInFromSide("left", 1.5)}
-        initial="initial"
-        animate={["animate"]}
-        className='p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36'
+        className='m-10 sm:p-10 md:p-15 lg:p-30 xl:p-36'
+        variants={animateForSolDeMayo()}
+        initial='initial'
+        animate={['animateEntry', 'animateFloating']}
       >
         <img
-          src={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Sol_de_Mayo_Bandera_Argentina.png/800px-Sol_de_Mayo_Bandera_Argentina.png'}
+          src={SolDeMayo}
+          className='w-46'
+        />
+      </motion.div>
+
+      <motion.div
+        className='m-10 sm:p-10 md:p-15 lg:p-30 xl:p-36'
+        variants={animateForSolDeMayo('right')}
+        initial='initial'
+        animate={['animateEntry', 'animateFloating']}
+      >
+        <img
+          src={CharlyArg}
           className='w-46'
         />
       </motion.div>
